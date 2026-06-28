@@ -19,7 +19,8 @@ const CheckoutPage = () => {
   const { addOrder } = useOrders();
   const { user } = useAuth();
   const [loading, setLoading] = useState(false);
-  const [paymentMethod, setPaymentMethod] = useState<"cash" | "upi" | "card">("cash");
+  // Online payments are disabled for now — Cash on Delivery only.
+  const paymentMethod: "cash" | "upi" | "card" = "cash";
 
   const [formData, setFormData] = useState({
     customerName: user?.displayName || "",
@@ -215,27 +216,15 @@ const CheckoutPage = () => {
               {/* Payment Method */}
               <div className="rounded-xl border bg-card p-6">
                 <h2 className="font-display font-bold mb-4">Payment Method</h2>
-                <div className="space-y-3">
-                  {[
-                    { value: "cash" as const, label: "💵 Cash on Delivery", desc: "Pay when order arrives" },
-                    { value: "upi" as const, label: "📱 UPI", desc: "Google Pay, PhonePe, Paytm" },
-                    { value: "card" as const, label: "💳 Debit/Credit Card", desc: "Secure payment" },
-                  ].map(method => (
-                    <label key={method.value} className="flex items-center gap-3 p-3 border rounded-lg cursor-pointer hover:bg-secondary/50 transition-colors" style={{ borderColor: paymentMethod === method.value ? "var(--primary)" : "var(--border)" }}>
-                      <input
-                        type="radio"
-                        name="payment"
-                        value={method.value}
-                        checked={paymentMethod === method.value}
-                        onChange={(e) => setPaymentMethod(e.target.value as typeof paymentMethod)}
-                      />
-                      <div>
-                        <div className="font-medium text-sm">{method.label}</div>
-                        <div className="text-xs text-muted-foreground">{method.desc}</div>
-                      </div>
-                    </label>
-                  ))}
+                <div className="flex items-center gap-3 p-3 border rounded-lg" style={{ borderColor: "var(--primary)" }}>
+                  <div>
+                    <div className="font-medium text-sm">💵 Cash on Delivery</div>
+                    <div className="text-xs text-muted-foreground">Pay when order arrives</div>
+                  </div>
                 </div>
+                <p className="text-xs text-muted-foreground mt-3">
+                  Online payments (UPI / Card) are currently unavailable. All orders are Cash on Delivery.
+                </p>
               </div>
 
               {/* Submit Button */}
