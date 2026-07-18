@@ -154,10 +154,10 @@ const HomePage = () => {
               transition={{ duration: 0.6 }}
             >
               <p className="text-lg text-muted-foreground mb-4">
-                Your trusted partner for quality household and apartment cleaning products. We've been serving hundreds of homes and residential societies for over 5 years.
+                Welcome to Siddeshwara Global Services, your trusted partner for premium cleaning products and hygiene essentials in Bangalore. Whether you are managing a large apartment complex, running a corporate office, or simply maintaining a spotless home, we provide professional-grade cleaning supplies tailored to your exact needs.
               </p>
               <p className="text-muted-foreground mb-6">
-                We understand the unique cleaning needs of Indian homes and apartments. That's why we carefully curate our product range to include everything from floor cleaners and mops to hygiene essentials — all from trusted brands at competitive prices.
+                We understand that maintaining high hygiene standards requires reliable, tough-acting products. That's why we meticulously curate our inventory to feature only the best floor cleaners, disinfectants, and specialized cleaning tools. From wholesale bulk orders with customized pricing for residential societies to convenient retail shopping with free local delivery in Singasandra, we make stocking up effortless.
               </p>
               <Link to="/about">
                 <Button className="gap-2">
@@ -272,7 +272,7 @@ const HomePage = () => {
                   <h3 className="font-display font-bold text-lg mb-4">Contact Information</h3>
                   <div className="space-y-4">
                     {[
-                      { icon: MapPin, label: "Address", value: "Siddeshwara Global Services, Begur Hobli, 191, 1st Cross Rd, near Govt Society, AECS Layout - A Block, Singasandra, Bengaluru, Karnataka 560068", href: "https://maps.google.com/?q=12.9179,77.6457" },
+                      { icon: MapPin, label: "Address", value: "Siddeshwara Global Services, Begur Hobli, 191, 1st Cross Rd, near Govt Society, AECS Layout - A Block, Singasandra, Bengaluru, Karnataka 560068", href: "https://maps.app.goo.gl/Qry3u4BmiU62Ppaz7" },
                       { icon: Phone, label: "Phone", value: "+91 98453 29179", href: "tel:+919845329179" },
                       { icon: Mail, label: "Email", value: "sgs.blr@outlook.com", href: "mailto:sgs.blr@outlook.com" },
                     ].map((item, i) => (
